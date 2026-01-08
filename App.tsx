@@ -123,16 +123,20 @@ const App: React.FC = () => {
         <div className="text-2xl font-bold tracking-tighter font-serif-display pointer-events-auto text-white">FocusFlow</div>
         <div className="flex items-center gap-4 pointer-events-auto">
           {/* Language Switcher */}
-          <div className="flex bg-white/10 backdrop-blur-sm rounded-full p-1 border border-white/20">
+          <div className="flex bg-white/10 backdrop-blur-sm rounded-full p-1 border border-white/20" role="group" aria-label="Select Language">
             <button 
               onClick={() => setLanguage('en')}
               className={`px-3 py-1 rounded-full text-[10px] font-bold uppercase transition-all ${language === 'en' ? 'bg-white text-black' : 'text-white/70 hover:text-white'}`}
+              aria-label="English"
+              aria-pressed={language === 'en'}
             >
               EN
             </button>
             <button 
               onClick={() => setLanguage('ru')}
               className={`px-3 py-1 rounded-full text-[10px] font-bold uppercase transition-all ${language === 'ru' ? 'bg-white text-black' : 'text-white/70 hover:text-white'}`}
+              aria-label="Русский"
+              aria-pressed={language === 'ru'}
             >
               RU
             </button>
@@ -141,6 +145,7 @@ const App: React.FC = () => {
           <button 
             onClick={() => scrollToPhase(ScrollPhase.ACTION)}
             className="hidden md:block px-6 py-2 rounded-full border border-white/20 text-xs uppercase tracking-widest hover:bg-white hover:text-black transition-all backdrop-blur-sm text-white"
+            aria-label={t('nav.takeControl')}
           >
             {t('nav.takeControl')}
           </button>
@@ -317,7 +322,7 @@ const App: React.FC = () => {
                  <p className="leading-relaxed">{t('manifesto.p1')}</p>
                  <p className="leading-relaxed">{t('manifesto.p2')}</p>
                  <div className="flex items-end justify-end">
-                     <div className="w-16 h-16 rounded-full border border-black flex items-center justify-center animate-[spin_10s_linear_infinite]">
+                     <div className="w-16 h-16 rounded-full border border-black flex items-center justify-center animate-[spin_10s_linear_infinite]" role="img" aria-label="Manifesto badge">
                         <svg className="w-8 h-8" fill="currentColor" viewBox="0 0 24 24"><path d="M12 2L2 7l10 5 10-5-10-5zm0 9l2.5-1.25L12 8.5l-2.5 1.25L12 11zm0 2.5l-5-2.5-5 2.5 10 5 10-5-5-2.5-5 2.5z"/></svg>
                      </div>
                  </div>

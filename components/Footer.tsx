@@ -100,6 +100,7 @@ const Footer: React.FC = () => {
           <button 
             onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}
             className="group flex items-center gap-3 text-[10px] uppercase tracking-widest text-gray-400 hover:text-white transition-colors"
+            aria-label="Scroll back to top"
           >
             Back to Top
             <div className="w-8 h-8 rounded-full border border-white/10 flex items-center justify-center group-hover:border-white/30 transition-colors">
